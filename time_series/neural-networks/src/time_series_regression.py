@@ -9,7 +9,7 @@ from sklearn.preprocessing import StandardScaler
 ###  Pre Processing  ###
 
 # Loading the data
-passengers = pd.read_csv('Passengers.csv')  # import dataset
+passengers = pd.read_csv('../data/Passengers.csv')  # import dataset
 
 # Viewing the data
 '''sns.lineplot(x='time', y='passengers', data=passengers, label='Dataset')  # Plot the dataset

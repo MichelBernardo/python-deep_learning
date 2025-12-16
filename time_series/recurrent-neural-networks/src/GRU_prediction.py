@@ -9,7 +9,7 @@ from sklearn.preprocessing import StandardScaler
 ###  Pre processing  ###
 
 # Loading Data
-bicycles = pd.read_csv('bicicletas.csv')
+bicycles = pd.read_csv('../data/bicicletas.csv')
 bicycles['datas'] = pd.to_datetime(bicycles['datas'])
 
 '''# Viewing the dataset
@@ -56,12 +56,12 @@ new_x_training, new_y_training = regression_steps(aux_vector, steps)
 aux_vector = pd.DataFrame(y_test)[0]
 new_x_test, new_y_test = regression_steps(aux_vector, steps)
 
-###  LSTM  ###
+###  GRU  ###
 new_x_training = new_x_training.reshape((new_x_training.shape[0], new_x_training.shape[1], 1))
 new_x_test = new_x_test.reshape((new_x_test.shape[0], new_x_test.shape[1], 1))
 
 recurrent = keras.Sequential([
-    keras.layers.LSTM(128, input_shape=(new_x_training.shape[1], new_x_training.shape[2])),
+    keras.layers.GRU(128, input_shape=(new_x_training.shape[1], new_x_training.shape[2])),
     keras.layers.Dense(units=1)
 ])
 
