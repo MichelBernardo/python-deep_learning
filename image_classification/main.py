@@ -41,7 +41,7 @@ model = keras.Sequential([
 # adam = keras.optimizers.Adam(lr=0.002)  # defines learning rate
 
 stopping_criterion = [keras.callbacks.EarlyStopping(monitor='val_loss'),  # Stop the training if the validation loss get worse
-                      keras.callbacks.ModelCheckpoint(filepath='best_model.keras',  # Save the model whenever the validation loss get better
+                      keras.callbacks.ModelCheckpoint(filepath='models/best_model.keras',  # Save the model whenever the validation loss get better
                                                       monitor='val_loss',
                                                       save_best_only=True)]  # Ensure that only the best model is saved
 
